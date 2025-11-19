@@ -24,8 +24,8 @@ export default function EditUser() {
     });
   }, [id]);
 
-  const handleUpdate = async () => {
-    await updateUser(id, form);
+  const handleUpdate = async (updatedData) => {
+    await updateUser(id, updatedData);
     toast({ title: "User updated (simulated)", status: "success" });
     navigate("/");
   };

@@ -21,9 +21,11 @@ export default function UserForm({ user, submitHandler }) {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(e.target.value);
   };
 
   const handleSubmit = () => {
+    console.log(formData);
     const finalData = {
       name: formData.name,
       username: formData.username,
