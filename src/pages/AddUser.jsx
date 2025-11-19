@@ -8,7 +8,6 @@ export default function AddUser() {
   const toast = useToast();
   const navigate = useNavigate();
 
-  // Initial FULL user structure
   const [form, setForm] = useState({
     name: "",
     username: "",
@@ -30,17 +29,18 @@ export default function AddUser() {
     },
   });
 
-  const handleSubmit = async () => {
-    await createUser(form);
+  const handleSubmit = async (updatedData) => {
+    await createUser(updatedData);
     toast({ title: "User added (simulated)", status: "success" });
     navigate("/");
   };
 
   return (
     <Box p={4}>
-      <Heading mb={4} textAlign="center">Add User</Heading>
+      <Heading mb={4} textAlign="center">
+        Add User
+      </Heading>
 
-      {/* Pass user & setForm to form */}
       <UserForm user={form} setForm={setForm} submitHandler={handleSubmit} />
     </Box>
   );

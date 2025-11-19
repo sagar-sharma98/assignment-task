@@ -24,7 +24,7 @@ export default function UserDetails() {
     getUser(id).then((data) => setUser(data));
   }, [id]);
 
-  // Loading UI
+
   if (!user)
     return (
       <Box
@@ -54,14 +54,13 @@ export default function UserDetails() {
       >
         <CardBody>
           <VStack spacing={5} textAlign="center">
-            {/* AVATAR */}
+     
             <Avatar
               size="2xl"
               name={user.name}
               src={`https://ui-avatars.com/api/?name=${user.name}&background=0D8ABC&color=fff`}
             />
 
-            {/* NAME + USERNAME */}
             <Heading size="lg">{user.name}</Heading>
             <Text fontSize="md" color="gray.500">
               @{user.username}
@@ -69,25 +68,25 @@ export default function UserDetails() {
 
             <Divider />
 
-            {/* EMAIL */}
+         
             <HStack spacing={3} w="100%" justify="flex-start">
               <EmailIcon color="teal.500" />
               <Text fontSize="md">{user.email}</Text>
             </HStack>
 
-            {/* PHONE */}
+         
             <HStack spacing={3} w="100%" justify="flex-start">
               <PhoneIcon color="orange.400" />
               <Text fontSize="md">{user.phone}</Text>
             </HStack>
 
-            {/* WEBSITE */}
+           
             <HStack spacing={3} w="100%" justify="flex-start">
               <FaGlobe color="#3182ce" />
               <Text fontSize="md">{user.website}</Text>
             </HStack>
 
-            {/* ADDRESS */}
+     
             <Divider />
             <Box w="100%" textAlign="left">
               <HStack spacing={3}>
@@ -115,7 +114,7 @@ export default function UserDetails() {
               </Text>
             </Box>
 
-            {/* COMPANY */}
+            
             <Divider />
             <Box w="100%" textAlign="left">
               <HStack spacing={3}>
